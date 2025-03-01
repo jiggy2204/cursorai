@@ -1,0 +1,83 @@
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-green-800 {
+  background-color: #166534;
+}
+
+/* Card animations */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Game table layout */
+.game-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hand areas */
+.hand-area {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 160px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button styles */
+.game-button {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.game-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Game messages */
+.game-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 1rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-table {
+    padding: 1rem;
+  }
+
+  .hand-area {
+    gap: 0.5rem;
+  }
+
+  .game-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+} 
