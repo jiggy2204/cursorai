@@ -9,6 +9,7 @@ import {
   determineWinner,
   hasBlackjack
 } from '../../utils/gameLogic';
+import './Blackjack.css';
 
 const Blackjack = () => {
   const [deck, setDeck] = useState([]);
@@ -103,13 +104,13 @@ const Blackjack = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-green-800 p-4 flex flex-col">
+    <div className="game-container">
       {/* Game table */}
-      <div className="flex-1 flex flex-col justify-between max-w-6xl mx-auto w-full">
+      <div className="game-table">
         {/* Dealer's area */}
-        <div className="mb-8">
-          <h2 className="text-white text-xl mb-4">Dealer's Hand</h2>
-          <div className="flex gap-4">
+        <div className="hand-section dealer-section">
+          <h2 className="hand-title">Dealer's Hand</h2>
+          <div className="hand-cards">
             {dealerHand.map((card, index) => (
               <Card
                 key={`${card.suit}-${card.value}`}
@@ -119,34 +120,34 @@ const Blackjack = () => {
             ))}
           </div>
           {gameStatus !== 'playing' && dealerHand.length > 0 && (
-            <div className="text-white mt-2">
+            <div className="hand-value">
               Value: {calculateHandValue(dealerHand)}
             </div>
           )}
         </div>
 
         {/* Game status and controls */}
-        <div className="text-center mb-8">
-          <div className="text-white text-2xl mb-4">{message}</div>
+        <div className="controls-section">
+          <div className="game-message">{message}</div>
           {gameStatus === 'waiting' && (
             <button
               onClick={dealInitialCards}
-              className="bg-yellow-500 text-black px-6 py-2 rounded-full text-lg font-bold hover:bg-yellow-400 transition-colors"
+              className="game-button deal-button"
             >
               Deal
             </button>
           )}
           {gameStatus === 'playing' && (
-            <div className="flex justify-center gap-4">
+            <div className="action-buttons">
               <button
                 onClick={handleHit}
-                className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg font-bold hover:bg-blue-400 transition-colors"
+                className="game-button hit-button"
               >
                 Hit
               </button>
               <button
                 onClick={handleStand}
-                className="bg-red-500 text-white px-6 py-2 rounded-full text-lg font-bold hover:bg-red-400 transition-colors"
+                className="game-button stand-button"
               >
                 Stand
               </button>
@@ -155,7 +156,7 @@ const Blackjack = () => {
           {gameStatus === 'ended' && (
             <button
               onClick={initializeGame}
-              className="bg-green-500 text-white px-6 py-2 rounded-full text-lg font-bold hover:bg-green-400 transition-colors"
+              className="game-button play-again-button"
             >
               Play Again
             </button>
@@ -163,9 +164,9 @@ const Blackjack = () => {
         </div>
 
         {/* Player's area */}
-        <div className="mb-4">
-          <h2 className="text-white text-xl mb-4">Your Hand</h2>
-          <div className="flex gap-4">
+        <div className="hand-section player-section">
+          <h2 className="hand-title">Your Hand</h2>
+          <div className="hand-cards">
             {playerHand.map((card) => (
               <Card
                 key={`${card.suit}-${card.value}`}
@@ -174,7 +175,7 @@ const Blackjack = () => {
             ))}
           </div>
           {playerHand.length > 0 && (
-            <div className="text-white mt-2">
+            <div className="hand-value">
               Value: {calculateHandValue(playerHand)}
             </div>
           )}

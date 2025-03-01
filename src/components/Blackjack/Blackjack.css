@@ -1,10 +1,10 @@
-.min-h-screen {
+/* .min-h-screen {
   min-height: 100vh;
 }
 
 .bg-green-800 {
   background-color: #166534;
-}
+} */
 
 /* Card animations */
 .card {
@@ -15,55 +15,126 @@
   transform: translateY(-5px);
 }
 
-/* Game table layout */
+.game-container {
+  min-height: 100vh;
+  background-color: #166534;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-table {
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 90vh;
   padding: 2rem;
-  height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* Hand areas */
-.hand-area {
+/* Hand sections */
+.hand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.hand-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.hand-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  min-height: 160px;
+  padding: 1rem;
+}
+
+.hand-value {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Controls section */
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.game-message {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.action-buttons {
   display: flex;
   gap: 1rem;
-  padding: 1rem;
-  min-height: 160px;
-  align-items: center;
   justify-content: center;
 }
 
 /* Button styles */
 .game-button {
   padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
   font-weight: bold;
   border-radius: 9999px;
+  border: none;
+  cursor: pointer;
   transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-.game-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.deal-button {
+  background-color: #eab308;
+  color: black;
 }
 
-.game-button:active {
-  transform: translateY(0);
-  box-shadow: none;
+.deal-button:hover {
+  background-color: #facc15;
 }
 
-/* Game messages */
-.game-message {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+.hit-button {
+  background-color: #3b82f6;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
+}
+
+.hit-button:hover {
+  background-color: #60a5fa;
+}
+
+.stand-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.stand-button:hover {
+  background-color: #f87171;
+}
+
+.play-again-button {
+  background-color: #22c55e;
+  color: white;
+}
+
+.play-again-button:hover {
+  background-color: #4ade80;
 }
 
 /* Responsive design */
@@ -72,12 +143,20 @@
     padding: 1rem;
   }
 
-  .hand-area {
+  .hand-cards {
     gap: 0.5rem;
   }
 
   .game-button {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .hand-title {
+    font-size: 1.25rem;
+  }
+
+  .game-message {
+    font-size: 1.25rem;
   }
 } 
