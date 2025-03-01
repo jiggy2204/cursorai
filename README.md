@@ -90,6 +90,32 @@ To preview the production build:
 npm run preview
 ```
 
+## 🧪 Testing
+
+The application uses Vitest and React Testing Library for unit and integration testing. The test files are organized in the `src/__tests__` directory, mirroring the main application structure.
+
+To run tests:
+
+```bash
+# Run tests in watch mode
+npm test
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Run tests with UI interface
+npm run test:ui
+```
+
+Test files are organized as follows:
+- `src/__tests__/components/`: Component tests
+- `src/__tests__/utils/`: Utility function tests
+
+Each test file corresponds to a component or utility in the main application:
+- Component tests verify rendering and user interactions
+- Utility tests ensure game logic functions work correctly
+- Integration tests check component interactions
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
