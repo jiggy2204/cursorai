@@ -13,4 +13,9 @@ export default defineConfig({
     setupFiles: './src/setupTests.js',
     css: true,
   },
+  server: {
+    port: 3000,
+    open: true,
+  },
+  base: '/cursorai/',
 })
